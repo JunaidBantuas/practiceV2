@@ -11,9 +11,9 @@ echo "FROM python" > tempdir/Dockerfile
 echo "COPY ./requirements.txt /home/myapp/" >> tempdir/Dockerfile               
 echo "RUN pip install -r /home/myapp/requirements.txt" >> tempdir/Dockerfile   
 echo "COPY ./templates /home/myapp/templates/" >> tempdir/Dockerfile
-echo "COPY exam.py /home/myapp/" >> tempdir/Dockerfile
+echo "COPY ./exam.py /home/myapp/" >> tempdir/Dockerfile
 echo "EXPOSE 5050" >> tempdir/Dockerfile
-echo "CMD python /home/myapp/exam.py" >> tempdir/Dockerfile
+echo "CMD python3 /home/myapp/exam.py" >> tempdir/Dockerfile
 
 cd tempdir
 docker build -t appexam .
