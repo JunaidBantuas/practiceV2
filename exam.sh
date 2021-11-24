@@ -4,6 +4,7 @@ mkdir tempdir
 mkdir tempdir/templates
 
 cp exam.py tempdir/.
+cp requirements.txt tempdir/.
 cp -r templates/* tempdir/templates/
 
 echo "FROM python" > tempdir/Dockerfile
