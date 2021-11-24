@@ -6,8 +6,9 @@ mkdir tempdir/templates
 cp exam.py tempdir/.
 cp -r templates/* tempdir/templates/
 
-echo "FROM python" >> tempdir/Dockerfile
-echo "RUN pip3 install flask" >> tempdir/Dockerfile
+echo "FROM python" > tempdir/Dockerfile
+echo "COPY ./requirements.txt /home/myapp/" >> tempdir/Dockerfile               
+echo "RUN pip install -r /home/myapp/requirements.txt" >> tempdir/Dockerfile   
 echo "COPY ./templates /home/myapp/templates/" >> tempdir/Dockerfile
 echo "COPY exam.py /home/myapp/" >> tempdir/Dockerfile
 echo "EXPOSE 5050" >> tempdir/Dockerfile
